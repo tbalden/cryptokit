@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.math.*;
 
 import org.tbalden.cryptokit.Hasher;
 
@@ -41,7 +42,7 @@ public class Bip39Dictionary {
 		return getDicWord(dicShuffledOrderBackMap.get(getDicOrder(shuffledWord)));
 	}
 	
-	public void shuffle(int hash) {
+	public void shuffle(BigInteger hash) {
 		ArrayList<Integer> shuffled = new ArrayList<Integer>();
 		int max = getDicSize();
 		for (int i=0; i<dicWords.size();i++) {
@@ -53,7 +54,7 @@ public class Bip39Dictionary {
 			shuffled.add(h);
 			dicShuffledOrder.put(i, h);
 			dicShuffledOrderBackMap.put(h, i);
-			System.out.println("shuffling "+getDicWord(i)+" -> "+h);
+//			System.out.println("shuffling "+getDicWord(i)+" -> "+h);
 		}
 	}
 	
@@ -64,7 +65,7 @@ public class Bip39Dictionary {
 		do {
 			line = br.readLine();
 			if (line!=null) {
-				System.out.println(line+" "+i);
+				//System.out.println(line+" "+i);
 				dicOrder.put(i,line);
 				dicWords.put(line,i++);
 			}

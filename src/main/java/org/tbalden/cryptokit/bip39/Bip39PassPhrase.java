@@ -37,7 +37,7 @@ public class Bip39PassPhrase {
 				StringTokenizer st = new StringTokenizer(line, " \t");
 				while (st.hasMoreTokens()) {
 					String t = st.nextToken();
-					System.out.println(t+" "+i);
+					//System.out.println(t+" "+i);
 					dicWords.put(t,i++);
 					words.add(t);
 				}
